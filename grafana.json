@@ -1,0 +1,68 @@
+[
+  {
+    "volumesFrom": [],
+    "memory": 128,
+    "extraHosts": null,
+    "dnsServers": null,
+    "disableNetworking": null,
+    "dnsSearchDomains": null,
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "containerPort": 3000,
+        "protocol": "tcp"
+      }
+    ],
+    "hostname": null,
+    "essential": true,
+    "entryPoint": null,
+    "mountPoints": [],
+    "name": "Grafana-Container",
+    "ulimits": null,
+    "dockerSecurityOptions": null,
+    "environment": [
+      {
+        "name": "GF_SECURITY_ADMIN_PASSWORD",
+        "value": "${grafana_password}"
+      },
+      {
+        "name": "GF_DATABASE_NAME",
+        "value": "${grafana_db_name}"
+      },
+      {
+        "name": "GF_DATABASE_TYPE",
+        "value": "${grafana_db_engine}"
+      },
+      {
+        "name": "GF_DATABASE_HOST",
+        "value": "${grafana_db_endpoint}"
+      },
+      {
+        "name": "GF_DATABASE_USER",
+        "value": "${grafana_db_username}"
+      },
+      {
+        "name": "GF_DATABASE_PASSWORD",
+        "value": "${grafana_db_password}"
+      },
+      {
+        "name": "SERVICE_TAGS",
+	"value": "container_label_org_label_schema_group=monitoring; container_name=grafana"
+      }
+    ],
+    "links": null,
+    "workingDirectory": null,
+    "readonlyRootFilesystem": null,
+    "image": "grafana/grafana",
+    "command": null,
+    "user": null,
+    "dockerLabels": {
+      "name": "grafana1",
+      "org.label-schema.group": "monitoring"
+    },
+    "logConfiguration": null,
+    "cpu": 0,
+    "privileged": null,
+    "memoryReservation": null
+  }
+]
